@@ -1,12 +1,13 @@
-const satellite = "The Moon";
-const galaxy = "The Milky Way";
-let stars = "North Star";
+const concept = ['arrays', 'can', 'be', 'mutated'];
 
-const callMyNightSky = () => {
-  stars = "Sirius";
+function changeArr(arr){
+  arr[3] = 'MUTATED';
+}
 
-  return "Night Sky: " + satellite + ", " + stars + ", " + galaxy;
-};
-
-console.log(callMyNightSky());
-console.log(stars)
+changeArr(concept);
+console.log(concept)
+const removeElement = newArr =>{
+  newArr.pop()
+}
+removeElement(concept)
+console.log(concept )
