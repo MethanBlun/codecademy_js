@@ -1,13 +1,11 @@
-const concept = ['arrays', 'can', 'be', 'mutated'];
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
 
-function changeArr(arr){
-  arr[3] = 'MUTATED';
-}
+// Write your code below
 
-changeArr(concept);
-console.log(concept)
-const removeElement = newArr =>{
-  newArr.pop()
+for (let i = 0;i < rapperArray.length ;i++){
+  console.log(rapperArray[i])
+  if (rapperArray[i] === rapperArray[2]){
+    break
+  }
 }
-removeElement(concept)
-console.log(concept )
+console.log("And if you don't know, now you know.")
