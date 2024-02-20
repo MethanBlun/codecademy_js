@@ -1,11 +1,37 @@
-const addTwo = num => {
-  return num + 2;
+let spaceship = {
+  passengers:  [
+{
+  kiki: 'koukou'
 }
+  ],
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032 
+  },
+  crew: {
+    captain: { 
+      name: 'Sandra', 
+      degree: 'Computer Engineering', 
+      encourageTeam() { console.log('We got this!') },
 
-const checkConsistentOutput = (func, val) => {
-  let checkA = val + 2;
-  let checkB = func(val);
-  return checkA === checkB ? func(val) : 'inconsistent results'
-}
+     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+  },
+  engine: {
+    model: "Nimbus2000"
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+      monitors: "HD"
+    },
+    'back-up': {
+      battery: "Lithium",
+      terabytes: 50
+    }
+  }
+}; 
 
-console.log(checkConsistentOutput(addTwo,19));
+let capFave = spaceship.crew.captain['favorite foods'][0];
+
+let firstPassenger = spaceship.passengers[0]
