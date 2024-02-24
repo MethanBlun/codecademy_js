@@ -1,11 +1,23 @@
-const robotFactory =function(model,mobile){
-  return {
-    model : model,
-    mobile : mobile,
-    beep : function (){
-      console.log('Beep Boop')
+const robot = {
+  _model: "1E78V2",
+  _energyLevel: 100,
+  _numOfSensors: 15,
+  get numOfSensors() {
+    if (typeof this._numOfSensors === "number") {
+      return this._numOfSensors;
+    } else {
+      return "Sensors are currently down.";
     }
-  }
-}
-const tinCan = robotFactory('P-500',true)
-tinCan.beep()
+  },
+  set numOfSensors(num) {
+    if (typeof num === "number" && num >= 0) {
+      this._numOfSensors = num;
+    }else {
+      console.log('Pass in a number that is greater than or equal to 0')
+    }
+  },
+};
+robot.numOfSensors = 100;
+console.log(robot.numOfSensors)
+
+
