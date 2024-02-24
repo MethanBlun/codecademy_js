@@ -1,16 +1,11 @@
-const robot = {
-  _model: '1E78V2',
-  _energyLevel: 100,
-  get energyLevel (){
-    if (typeof this._energyLevel ===  'number'){
-      return `My current energy level is ${this._energyLevel} `
-    }else {
-      return 'System malfunction: cannot retrieve energy level'
+const robotFactory =function(model,mobile){
+  return {
+    model : model,
+    mobile : mobile,
+    beep : function (){
+      console.log('Beep Boop')
     }
   }
-};
-
-console.log(robot.energyLevel)
-
-
-
+}
+const tinCan = robotFactory('P-500',true)
+tinCan.beep()
