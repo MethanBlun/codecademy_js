@@ -1,8 +1,14 @@
 
 
 
-const button = document.querySelector("#button")
 
-button.addEventListener("click" , function(event){
-console.log(event.target)
-})
+
+
+
+
+let myArray = ["red", "gressen", "blue"];
+console.log(myArray);
+
+[myArray[0], myArray[2]] = [myArray[2], myArray[0]];
+console.log(myArray);
+
