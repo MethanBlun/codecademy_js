@@ -2,17 +2,16 @@
 
 
 
-function householdItems(){
-  return [
-    "Chair",
-    "Fan",
-    "bich"
+// function householdItems(){
+//   return [
+//     "Chair",
+//     "Fan",
+//     "bich"
 
-  ]
-}
+//   ]
+// }
+[a = 40, b = 4]  = [, 23];
 
-
-[a,b,c] = householdItems();
 console.log(a)
 
 // const householdItems = [
