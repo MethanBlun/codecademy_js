@@ -10,10 +10,10 @@
 
 //   ]
 // }
-[a = 40, b = 4]  = [, 23];
 
-console.log(a)
-
+let a , b
+[a,,b]= ['rose','mark','marry']
+console.log(a,b)
 // const householdItems = [
 //   "Table",
   // "Chair",
