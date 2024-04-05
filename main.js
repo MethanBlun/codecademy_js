@@ -2,28 +2,23 @@
 
 
 
-// function householdItems(){
-//   return [
-//     "Chair",
-//     "Fan",
-//     "bich"
 
-//   ]
-// }
 
-let a , b
-[a,,b]= ['rose','mark','marry']
-console.log(a,b)
-// const householdItems = [
-//   "Table",
-  // "Chair",
-  // "Fan",
-  // "bich",
-//   "tiger",
-//   "hunder",
-//   "huns",
-//   "visigoth",
-// ];
+const householdItems = [
+  "Table",
+  "Chair",
+  "Fan",
+  "bich",
+  "tiger",
+  "hunder",
+  "huns",
+  "visigoth",
+];
+
+const [a,b,c,...d] = householdItems;
+console.log(d)
+
+// householdItems.map((item) => console.log(item))
 
 
 
