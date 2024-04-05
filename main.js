@@ -1,18 +1,31 @@
-const householdItems = [
-  "Table",
-  "Chair",
-  "Fan",
-  "bich",
-  "tiger",
-  "hunder",
-  "huns",
-  "visigoth",
-];
 
 
 
-const a = householdItems.length
+
+function householdItems(){
+  return [
+    "Chair",
+    "Fan",
+    "bich"
+
+  ]
+}
 
 
-householdItems.map((item) => console.log(item))
+[a,b,c] = householdItems();
+console.log(a)
 
+// const householdItems = [
+//   "Table",
+  // "Chair",
+  // "Fan",
+  // "bich",
+//   "tiger",
+//   "hunder",
+//   "huns",
+//   "visigoth",
+// ];
+
+
+
+//comment attribuer directement chaque element du tableau a une lettre generer automatiquement si posssible
