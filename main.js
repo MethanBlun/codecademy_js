@@ -1,11 +1,12 @@
 const user = {
   name: "moustapha",
   age: 17,
+  lastName : 'Anne',
   level: "high-level",
   isRich: false,
-  isPoor : 100
+
 };
 
 
-const {name , age , isPoor=20000 } = user
-console.log(age,name,isPoor)
+const {name, lastName , fullName=`${name }${lastName}` } = user
+console.log(fullName)
