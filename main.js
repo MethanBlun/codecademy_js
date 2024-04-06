@@ -21,5 +21,13 @@ const user = {
     },
   },
 };
+const keys = Object.keys(user);
+console.log(keys.length)
+keys.shift()
+console.log(keys.length)
 
-console.log(Object.keys(user.department));
+
+
+
+
+
