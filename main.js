@@ -20,3 +20,5 @@ const users = [
 for (let {name  , age} of users){
   console.log(`${name} is ${age} years old `)
 }
+
+users.map((user) => console.log(user.name ,'is', user.age ,'years old'))
