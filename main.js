@@ -1,10 +1,10 @@
 const user = {
   name: "moustapha",
-  age: 10,
+  age: 17,
   level: "high-level",
   isRich: false,
 };
 
 
-const {name} = user
-console.log(name)
+const {name , age } = user
+console.log(age)
