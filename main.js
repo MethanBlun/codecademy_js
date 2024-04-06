@@ -16,9 +16,7 @@ const users = [
   }
 ];
 
+console.log(users)
 
-for (let {name  , age} of users){
-  console.log(`${name} is ${age} years old `)
-}
-
-users.map((user) => console.log(user.name ,'is', user.age ,'years old'))
+const updated = [...users, users[1].name ='alix']
+console.log(updated)
