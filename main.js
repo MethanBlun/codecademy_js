@@ -1,12 +1,12 @@
 
 
 
-
-const starter = ()=>{
-  const timeOut = setTimeout( () => {alert('helllo i works')},3000);
-} 
-
-const stoper = () => {
-  clearTimeout(this.timeOut)
-  console.log('cleared')
+const sayHello = () => {
+alert('hellllooo')
 }
+
+const intervalId =  setInterval(sayHello,2000)
+
+
+
+clearTimeout(intervalId)
