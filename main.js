@@ -1,11 +1,6 @@
 
 
 
-const sayHello = (a,b) => {
-alert( `${a} , ${b}`)
-}
-
-const intervalId =  setInterval(sayHello,10000,'hello ','i am Moustapha Anne')
-
-
-
+fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    .then(response => console.log(response))
+    .catch(error => console.error(error))
