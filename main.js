@@ -1,14 +1,17 @@
 
 
-
+let usersPokemon
 
 const getUsersPokemon = ({target})=>{
-   const usersPokemon = target.value
-   console.log(usersPokemon)
+    usersPokemon = target.value
+        console.log(usersPokemon)
+  
 }
 const getPokemonFromApi = ()=>{
-    return console.log(getPokemonFromApi)
+    console.log(usersPokemon)
 }
+
+
 
 // fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
 //     .then(response => {
