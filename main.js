@@ -3,18 +3,18 @@
 
 
 let p = new Promise((resolve,reject)=>{
-let testReussi = true;
+let testReussi = false;
 
 if (testReussi){
-  resolve(console.log('le test est reussi') )
-}else { reject(console.log('le test fut un echec'))}
+  resolve('success' )
+}else { reject('error')}
 })
 
 
 
 
 
-
+p.then(message=>{ console.log(`le resole a bien ${message}`)}  ).catch(message => {console.log(`le message est une ${message}`)})
 
 
 
