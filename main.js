@@ -1,25 +1,26 @@
+let usersPokemon;
 
-
-let usersPokemon
-
-const getUsersPokemon = ({target})=>{
-    usersPokemon = target.value
-        console.log(usersPokemon)
-  
-}
-const getPokemonFromApi = ()=>{
-    console.log(usersPokemon)
-}
-
-
-
-// fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
-//     .then(response => {
-//         if(!response.ok){
-            
-//             throw new Error('could not fetch ressources')
-//         }
-//      return response.json()
-//     })
-//     .then(data => console.log(data.id))
-//     .catch(error => console.error(error))
+const getUsersPokemon = ({ target }) => {
+  usersPokemon = target.value;
+};
+const getPokemonFromApi = () => {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${usersPokemon}`)
+    .then((resp) => {
+      if (!resp.ok) {
+        throw (
+          (new Error("POkemon enexistant"),
+          alert("your pokemon does not exist"))
+        );
+      }
+      return resp.json();
+    })
+    .then(function (data) {
+      dynImg = document.getElementById("dynamic-image");
+      dynImg.src = data.sprites.back_shiny;
+      //relier la source de l'img avec le repertoire dans l'api
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Votre Pokémon n'existe pas.");
+    });
+};
