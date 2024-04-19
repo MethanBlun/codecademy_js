@@ -1,39 +1,32 @@
-
-
-
-
-const isPhoneStore = true;
+const isPhoneStore = false;
 const isPhoneAvailable = true;
 
-function processMessage(resolveCallback, rejectCallback) {
+let processMessage = new Promise((resolve, reject) => {
   if (!isPhoneStore) {
-    rejectCallback({
-      name: 'Wrong store',
-      message: 'Sorry, this is a food store!',
+    reject({
+      name: "Wrong store",
+      message: "Sorry, this is a food store!",
     });
   } else if (!isPhoneAvailable) {
-    rejectCallback({
-      name: 'Out of stock',
-      message: 'Sorry, the X phone is out of stock!',
+    reject({
+      name: "Out of stock",
+      message: "Sorry, the X phone is out of stock!",
     });
   } else {
-    resolveCallback({
-      name: 'OK',
-      message: 'The X phone is available! How many you want to buy?',
+    resolve({
+      name: "OK",
+      message: "The X phone is available! How many you want to buy?",
     });
   }
-}
+});
 
 
 
-
-
-
-
-
-
-
-
+processMessage.then(message => console.log(message)).catch(message => console.log(message))
+// processMessage(
+//   (value) => console.log(value),
+//   (reason) => console.log(reason)
+// );
 
 // let p = new Promise((resolve, reject) => {
 //   let testReussi = false;
@@ -50,9 +43,6 @@ function processMessage(resolveCallback, rejectCallback) {
 // }).catch((message) => {
 //   console.log(`le message est une ${message}`);
 // });
-
-
-
 
 // let usersPokemon;
 
