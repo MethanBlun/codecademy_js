@@ -20,8 +20,6 @@ const isPhoneAvailable = true;
 //   }
 // });
 
-
-
 // processMessage.then(message => console.log(message)).catch(message => console.log(message))
 // processMessage(
 //   (value) => console.log(value),
@@ -44,30 +42,28 @@ const isPhoneAvailable = true;
 //   console.log(`le message est une ${message}`);
 // });
 
-
-
-
-
-
 let usersPokemon;
 
 const getUsersPokemon = ({ target }) => {
   usersPokemon = target.value;
-  usersPokemon =usersPokemon
+  usersPokemon = usersPokemon;
 };
 
-
-async function getPokemonFromApiUn(){
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${usersPokemon.toLowerCase()}`)
-  if (response.ok){
-    const json = await response.json()
-    console.log(json)
+async function getPokemonFromApiUn() {
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${usersPokemon.toLowerCase()}`
+    );
+    if (response.ok) {
+      const json = await response.json();
+      console.log(json);
+      let dynImg = document.getElementById("dynamic-image");
+      dynImg.src = json.sprites.back_shiny;
+    }
+  } catch (error) {
+    console.error(error);
   }
-
-} 
-
-
-
+}
 // const getPokemonFromApi = () => {
 //   fetch(`https://pokeapi.co/api/v2/pokemon/${usersPokemon.toLowerCase()}`)
 //     .then((resp) => {
