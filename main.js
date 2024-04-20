@@ -1,28 +1,28 @@
 const isPhoneStore = false;
 const isPhoneAvailable = true;
 
-let processMessage = new Promise((resolve, reject) => {
-  if (!isPhoneStore) {
-    reject({
-      name: "Wrong store",
-      message: "Sorry, this is a food store!",
-    });
-  } else if (!isPhoneAvailable) {
-    reject({
-      name: "Out of stock",
-      message: "Sorry, the X phone is out of stock!",
-    });
-  } else {
-    resolve({
-      name: "OK",
-      message: "The X phone is available! How many you want to buy?",
-    });
-  }
-});
+// let processMessage = new Promise((resolve, reject) => {
+//   if (!isPhoneStore) {
+//     reject({
+//       name: "Wrong store",
+//       message: "Sorry, this is a food store!",
+//     });
+//   } else if (!isPhoneAvailable) {
+//     reject({
+//       name: "Out of stock",
+//       message: "Sorry, the X phone is out of stock!",
+//     });
+//   } else {
+//     resolve({
+//       name: "OK",
+//       message: "The X phone is available! How many you want to buy?",
+//     });
+//   }
+// });
 
 
 
-processMessage.then(message => console.log(message)).catch(message => console.log(message))
+// processMessage.then(message => console.log(message)).catch(message => console.log(message))
 // processMessage(
 //   (value) => console.log(value),
 //   (reason) => console.log(reason)
@@ -44,29 +44,30 @@ processMessage.then(message => console.log(message)).catch(message => console.lo
 //   console.log(`le message est une ${message}`);
 // });
 
-// let usersPokemon;
+let usersPokemon;
 
-// const getUsersPokemon = ({ target }) => {
-//   usersPokemon = target.value;
-// };
-// const getPokemonFromApi = () => {
-//   fetch(`https://pokeapi.co/api/v2/pokemon/${usersPokemon}`)
-//     .then((resp) => {
-//       if (!resp.ok) {
-//         throw (
-//           (new Error("POkemon enexistant"),
-//           alert("your pokemon does not exist"))
-//         );
-//       }
-//       return resp.json();
-//     })
-//     .then(function (data) {
-//       dynImg = document.getElementById("dynamic-image");
-//       dynImg.src = data.sprites.back_shiny;
-//       //relier la source de l'img avec le repertoire dans l'api
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//       alert("Votre Pokémon n'existe pas.");
-//     });
-// };
+const getUsersPokemon = ({ target }) => {
+  usersPokemon = target.value;
+  usersPokemon =usersPokemon
+};
+const getPokemonFromApi = () => {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${usersPokemon.toLowerCase()}`)
+    .then((resp) => {
+      if (!resp.ok) {
+        throw (
+          (new Error("POkemon enexistant"),
+          alert("your pokemon does not exist"))
+        );
+      }
+      return resp.json();
+    })
+    .then(function (data) {
+      dynImg = document.getElementById("dynamic-image");
+      dynImg.src = data.sprites.back_shiny;
+      //relier la source de l'img avec le repertoire dans l'api
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Votre Pokémon n'existe pas.");
+    });
+};
