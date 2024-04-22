@@ -60,8 +60,10 @@ async function getPokemonFromApiUn() {
       let dynImg = document.getElementById("dynamic-image");
       dynImg.src = json.sprites.back_shiny;
     }
-  } catch (error) {
-    console.error(error);
+  } 
+    catch (error) {
+      console.error(error);
+      alert("Votre Pokémon n'existe pas.");
   }
 }
 // const getPokemonFromApi = () => {
