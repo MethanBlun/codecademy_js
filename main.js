@@ -1,19 +1,16 @@
-let queue = [];
+const array1 = ["mark", "zuk", "may", "faal", "christ"];
+const array2 = ["mark", "zuk", "herk", "royal", "sisre"];
+const array3 = [];
 
-// Ajout d'éléments à la fin de la file
-queue.push("Task 1");
-queue.push("Task 2");
-queue.push("Task 3");
-
-// Traitement des éléments de la file à intervalles réguliers
-let intervalId = setInterval(() => {
-  if (queue.length === 0) {
-    clearInterval(intervalId); // Arrête l'intervalle lorsque la file est vide
-    console.log("Queue is empty, stopping interval.");
-  } else {
-    let task = queue.shift(); // Retire et traite le premier élément de la file
-    console.log("Processing:", task);
-    console.log("Remaining queue:", queue);
+for (let i = 0; i < array1.length; i++) {
+  for (let j = 0; j < array2.length; j++) { // Initialisation de j à 0
+    console.log('j : ', j);
+    if (array1[i] === array2[j]) {
+      array3.push(array1[i]); // Ajouter l'élément correspondant à array3
+    }
   }
-}, 2000);
+}
 
+console.log(array3); // Afficher les éléments similaires trouvés
+
+//TODO:creer creer deux array avecc des valeurs et une vide dont on ajoute les valeurs croisees
